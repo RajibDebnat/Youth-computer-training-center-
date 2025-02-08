@@ -70,7 +70,7 @@ export const BackgroundBeamsWithCollision = ({
     <div
       ref={parentRef}
       className={cn(
-        "h-[100vh] max-md:h-screen overflow-hidden  w-[100vw]  from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center  justify-center ",
+        "h-full  bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden",
         // h-screen if you want bigger
         className
       )}
@@ -100,8 +100,8 @@ export const BackgroundBeamsWithCollision = ({
 const CollisionMechanism = React.forwardRef<
   HTMLDivElement,
   {
-    containerRef: React.RefObject<HTMLDivElement | null>;
-    parentRef: React.RefObject<HTMLDivElement | null>;
+    containerRef: React.RefObject<HTMLDivElement>;
+    parentRef: React.RefObject<HTMLDivElement>;
     beamOptions?: {
       initialX?: number;
       translateX?: number;
@@ -128,16 +128,15 @@ const CollisionMechanism = React.forwardRef<
 
   useEffect(() => {
     const checkCollision = () => {
-        if (
-            beamRef.current &&
-            containerRef.current &&
-            parentRef.current &&
-            !cycleCollisionDetected
-          )  {
-        const beamRect = beamRef.current!.getBoundingClientRect();
-const containerRect = containerRef.current!.getBoundingClientRect();
-const parentRect = parentRef.current!.getBoundingClientRect();
-
+      if (
+        beamRef.current &&
+        containerRef.current &&
+        parentRef.current &&
+        !cycleCollisionDetected
+      ) {
+        const beamRect = beamRef.current.getBoundingClientRect();
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const parentRect = parentRef.current.getBoundingClientRect();
 
         if (beamRect.bottom >= containerRect.top) {
           const relativeX =
@@ -175,40 +174,54 @@ const parentRect = parentRef.current!.getBoundingClientRect();
   }, [collision]);
 
   return (
-    <motion.div
-      key={beamKey}
-      ref={beamRef}
-      animate="animate"
-      initial={{
-        translateY: beamOptions.initialY || "-200px",
-        translateX: beamOptions.initialX || "0px",
-        rotate: beamOptions.rotate || 0,
-      }}
-      variants={{
-        animate: {
-          translateY: beamOptions.translateY || "1800px",
-          translateX: beamOptions.translateX || "0px",
+    <>
+      <motion.div
+        key={beamKey}
+        ref={beamRef}
+        animate="animate"
+        initial={{
+          translateY: beamOptions.initialY || "-200px",
+          translateX: beamOptions.initialX || "0px",
           rotate: beamOptions.rotate || 0,
-        },
-      }}
-      transition={{
-        duration: beamOptions.duration || 8,
-        repeat: Infinity,
-        repeatType: "loop",
-        ease: "linear",
-        delay: beamOptions.delay || 0,
-        repeatDelay: beamOptions.repeatDelay || 0,
-      }}
-      className={cn(
-        "absolute left-0 top-20 m-auto h-14  w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent",
-        beamOptions.className
-      )}
-    />
+        }}
+        variants={{
+          animate: {
+            translateY: beamOptions.translateY || "1800px",
+            translateX: beamOptions.translateX || "0px",
+            rotate: beamOptions.rotate || 0,
+          },
+        }}
+        transition={{
+          duration: beamOptions.duration || 8,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "linear",
+          delay: beamOptions.delay || 0,
+          repeatDelay: beamOptions.repeatDelay || 0,
+        }}
+        className={cn(
+          "absolute left-0 top-10 m-auto h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent",
+          beamOptions.className
+        )}
+      />
+      <AnimatePresence>
+        {collision.detected && collision.coordinates && (
+          <Explosion
+            key={`${collision.coordinates.x}-${collision.coordinates.y}`}
+            className=""
+            style={{
+              left: `${collision.coordinates.x}px`,
+              top: `${collision.coordinates.y}px`,
+              transform: "translate(-50%, -50%)",
+            }}
+          />
+        )}
+      </AnimatePresence>
+    </>
   );
 });
 
 CollisionMechanism.displayName = "CollisionMechanism";
-
 
 const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
   const spans = Array.from({ length: 20 }, (_, index) => ({
