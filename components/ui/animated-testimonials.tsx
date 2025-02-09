@@ -1,5 +1,5 @@
 "use client";
-
+import { StaticImageData } from "next/image";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -16,7 +16,12 @@ export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
 }: {
-  testimonials: Testimonial[];
+  testimonials: {
+    quote:string,
+    name:string,
+    designation:string,
+    src :StaticImageData
+  }[];
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
@@ -54,7 +59,7 @@ export const AnimatedTestimonials = ({
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
-                  key={`${testimonial.src+index}`}
+                  
                   initial={{
                     opacity: 0,
                     scale: 0.9,

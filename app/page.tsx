@@ -10,7 +10,7 @@ import FormSection from "components/FormSection";
 
 export default function Home() {
   return (
-    <div className="   max-md:p-8 max-lg:p-10 p-12 max-sm:px-6 overflow-clip  ">
+    <div className="   max-md:p-0  p-12  max-lg:p-8    overflow-clip max-sm:p-2 ">
       <Navbar/> 
       <Hero/>
       <CourseDetails/>

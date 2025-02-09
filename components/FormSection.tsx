@@ -42,8 +42,10 @@ function FormSection() {
   };
 
   return (
-    <section id="contact" className=" relative  p-16  mx-auto max-md:p-8 max-sm:p-3">
-    
+    <section id="contact" className=" relative    mx-auto ">
+    <div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#c03914" fillOpacity="1" d="M0,192L34.3,170.7C68.6,149,137,107,206,122.7C274.3,139,343,213,411,218.7C480,224,549,160,617,117.3C685.7,75,754,53,823,37.3C891.4,21,960,11,1029,42.7C1097.1,75,1166,149,1234,181.3C1302.9,213,1371,203,1406,197.3L1440,192L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path></svg>
+    </div>
 
         <SectionHeading>
             Contact Us

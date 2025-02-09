@@ -8,7 +8,10 @@ import Reveal from "./parts/Reveal";
 function About() {
   return (
     <div className=" relative max-w-[90vw] max-xl:max-w-[100vw] mx-auto px-16 py-6 max-md:p-0  ">
+      <Reveal  width="fit content" >
+
       <div className=" max-md:hidden absolute -z-30 w-[800px] h-[800px] rounded-full bg-brown-100 top-[-100px] right-[-400px]"/>
+      </Reveal>
       <Reveal width="fit content" direction="x">
 
       <h1 className=" text-center text-6xl  max-md:text-6xl max-sm:text-5xl font-bold font-Prompt  text-slate-800 mb-14">

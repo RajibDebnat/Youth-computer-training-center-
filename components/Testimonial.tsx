@@ -5,12 +5,12 @@ import SectionHeading from './parts/SectionHeading'
 import Reveal from './parts/Reveal'
 function Testimonial() {
   return (
-    <div className=' flex   justify-center p-16  max-md:p-8 max-sm:p-2 bg-brown rounded-xl'>
+    <div className=' flex   justify-center p-16  max-md:p-8 max-sm:p-2 bg-brown rounded-xl rounded-b-none'>
         <div>
 
         <Reveal width='content fit' direction='x'>
 
-        <SectionHeading className=' text-white'>
+        <SectionHeading className=' m-auto text-white'>
             Testimonial
         </SectionHeading>
         </Reveal>
