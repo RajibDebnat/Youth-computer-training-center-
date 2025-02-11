@@ -8,7 +8,7 @@ function Footer() {
     <footer className='relative  mt-10'>
   
 
- <h2 className=' mx-auto text-center font-Prompt  max-sm:text-2xl  max-md:text-4xl font-bold text-slate-700 text-6xl w-[50%]'>
+ <h2 className=' mx-auto text-center font-Prompt  max-sm:text-2xl  max-md:text-4xl font-bold text-slate-700 text-6xl w-[50%] max-sm:w-full'>
     Let's Start Making Future Self Future Proof!
  </h2>
 

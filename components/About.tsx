@@ -45,7 +45,7 @@ function About() {
           <Image
             className="  rounded-lg object-fit "
             alt=" 3 student holding laptop"
-            src={"/about.jfif"}
+            src={"/about.webp"}
             width={500}
             height={500}
             />

@@ -2,7 +2,7 @@
   import { courses } from '../raw-data/data'
   import Image from "next/image";
   import CourseButton from './ui/CourseButton';
-  import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
+
   import CourseList from './parts/CourseList';
   import { BackgroundLines } from './ui/background-lines';
   import Link from "next/link";
@@ -21,7 +21,8 @@
         <div className="  relative z-20 gap-6  flex justify-center   flex-wrap ">
   {courses.map(course=>(
    
-   <div  
+   <div 
+   key={course.id} 
   className="justify-center shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out border-[1px] border-slate-200 p-8 max-[430px]:p-2 w-[400px] max-lg:w-[90%] bg-white rounded-xl"
 >
   <h4 className="text-2xl font-semibold text-slate-800 font-Prompt mb-5 text-center">
