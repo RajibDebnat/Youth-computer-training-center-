@@ -11,7 +11,7 @@ import { FaBrain } from "react-icons/fa";
 import Reveal from "./parts/Reveal";
 function Hero() {
   return (
-    <div className=" relative  max-sm:px-2  p-6 mt-8   max-md:mt-20 flex justify-center   min-h-[100vh ]">
+    <div id="home" className=" relative  max-sm:px-2  p-6 mt-8   max-md:mt-20 flex justify-center   min-h-[100vh ]">
       <BackgroundBeamsWithCollision>
         {/* Grid container */}
         <div className=" py-10  mx-auto   grid grid-cols-2  max-md:grid-cols-1  w-[85vw] place-items-center">

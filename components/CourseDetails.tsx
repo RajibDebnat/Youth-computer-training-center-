@@ -9,7 +9,7 @@
   import Reveal from './parts/Reveal';
   function CourseDetails() {
     return (
-      <div className=' relative p-16 max-xl:p-6 '>
+      <div id='courses' className=' relative p-16 max-xl:p-6 '>
         <Reveal width='content fit'>
 
         <h2 className=' max-sm:text-5xl max-[370px]:text-[37px] text-6xl font-Prompt font-bold text-center mb-5 text-slate-700'>Course Details</h2>
@@ -18,7 +18,7 @@
 
   <Reveal width='fit content'>
 
-        <div className="  relative z-50 gap-6  flex justify-center   flex-wrap ">
+        <div className="  relative z-20 gap-6  flex justify-center   flex-wrap ">
   {courses.map(course=>(
    
    <div  

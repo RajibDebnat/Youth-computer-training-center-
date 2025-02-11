@@ -10,6 +10,7 @@ import test4 from '../public/testimonial/test4.png'
 
  export const content = [
   {
+    id:"ccc1",
     title: "Comprehensive Course Curriculum",
     description:
       " Learn essential computer skills, including Microsoft Excel, Word, PowerPoint, and computer hardware, all in one place.",
@@ -20,6 +21,7 @@ import test4 from '../public/testimonial/test4.png'
     ),
   },
   {
+    id:"elt2",
     title: "Expert-Led Training ",
     description:
       "Get hands-on learning from experienced instructors with real-world industry knowledge.",
@@ -30,6 +32,7 @@ import test4 from '../public/testimonial/test4.png'
     ),
   },
   {
+    id:"irc3",
     title: "Industry-Recognized Certification",
     description:
       " Earn a valuable certificate upon course completion to boost your career prospects.",
@@ -40,6 +43,7 @@ import test4 from '../public/testimonial/test4.png'
     ),
   },
   {
+    id:"pjol4",
     title: "Practical & Job-Oriented Learning",
     description:
       "Work on real-world projects and case studies to develop skills that employers seek.",
@@ -88,10 +92,10 @@ import test4 from '../public/testimonial/test4.png'
     
   ];
   export const navLinks = [
-    { id: 1, title: "Home", link: "#" },
-    { id: 2, title: "About", link: "#" },
-    { id: 3, title: "Services", link: "#" },
-    { id: 4, title: "Contact", link: "#" },
+    { id: 1, title: "Home", link: "#home" },
+    { id: 3, title: "Courses", link: "#courses" },
+    { id: 2, title: "About", link: "#about" },
+    { id: 4, title: "Contact", link: "#contact" },
   ];
   export const courses = [
     {
@@ -124,6 +128,7 @@ import test4 from '../public/testimonial/test4.png'
   ];
  export const testimonials = [
     {
+     id:'testi1',
       quote:
         "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
       name: "Sarah Chen",
@@ -131,6 +136,7 @@ import test4 from '../public/testimonial/test4.png'
       src: test4,
     },
     {
+      id:'testi2',
       quote:
         "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
       name: "Michael Rodriguez",
@@ -139,6 +145,7 @@ import test4 from '../public/testimonial/test4.png'
     },
  
     {
+      id:'testi3',
       quote:
         "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
       name: "James Kim",
@@ -146,6 +153,7 @@ import test4 from '../public/testimonial/test4.png'
       src: test1,
     },
     {
+      id:'testi4',
       quote:
         "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
       name: "Lisa Thompson",

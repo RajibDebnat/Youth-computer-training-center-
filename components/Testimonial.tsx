@@ -18,6 +18,7 @@ function Testimonial() {
         <AnimatedTestimonials testimonials={testimonials} />
         </Reveal>
     </div>
+    
         </div>
   )
 }

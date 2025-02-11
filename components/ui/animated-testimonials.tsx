@@ -4,6 +4,7 @@ import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import test from "node:test";
 
 type Testimonial = {
   quote: string;
@@ -17,6 +18,7 @@ export const AnimatedTestimonials = ({
   autoplay = false,
 }: {
   testimonials: {
+    id:string,
     quote:string,
     name:string,
     designation:string,
@@ -59,7 +61,7 @@ export const AnimatedTestimonials = ({
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
-                  
+                   key={testimonial.id}
                   initial={{
                     opacity: 0,
                     scale: 0.9,

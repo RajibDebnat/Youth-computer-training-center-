@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 export const StickyScroll = ({
   content,
@@ -67,7 +67,7 @@ export const StickyScroll = ({
       className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
       ref={ref}
     >
-      <div className="div relative flex gap-4  items-start px-4">
+      <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
@@ -78,7 +78,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl  font-Prompt font-bold text-slate-800"
+                className="text-2xl font-bold text-slate-600"
               >
                 {item.title}
               </motion.h2>
@@ -89,7 +89,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg font-medium border-b-[1px]  border-slate-600  font-montserrate text-slate-600 max-w-sm mt-8"
+                className="text-kg text-slate-500 max-w-sm mt-10"
               >
                 {item.description}
               </motion.p>
