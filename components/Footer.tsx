@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import SectionHeading from './parts/SectionHeading'
+
 
 
 function Footer() {

@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "../src/components/ui/input";
 import SectionHeading from "./parts/SectionHeading";
-import { WavyBackground } from "./ui/wavy-background";
+
 
 const formSchema = z.object({
   username: z.string().min(2, {

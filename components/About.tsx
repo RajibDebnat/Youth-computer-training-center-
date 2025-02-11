@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { ButtonsCard } from "./ui/tailwindcss-buttons";
+
 import HomeBtn from "./ui/home-btn";
 import Reveal from "./parts/Reveal";
 
